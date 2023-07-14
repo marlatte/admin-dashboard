@@ -1,16 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
 	<title>Admin Dashboard</title>
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet"
+		  href="style.css">
 </head>
+
 <body>
-	<header></header>
-	<article class="sidebar"></article>
-	<main></main>
+	<div class="wrapper">
+		<header>
+			<div class="top-line">
+				<div class="icon">q</div>
+				<input type="search"
+					   name="search"
+					   id="search">
+				<div class="notifications">n</div>
+				<div class="prof-pic">pic</div>
+				<div class="username">Walker Marlatt</div>
+			</div>
+			<div class="bottom-line">
+				<div class="prof-pic">pic</div>
+				<div class="text">
+					<div class="greeting">Hi there,</div>
+					<span class="username">Walker Marlatt</span>
+					<span class="user-handle">(@marlatte)</span>
+				</div>
+				<button type="button">New</button>
+				<button type="button">Upload</button>
+				<button type="button">Share</button>
+			</div>
+		</header>
+		<article class="sidebar ">
+			<h1><span class="icon">%</span>Dashboard</h1>
+			<ul class="nav1">
+				<li><a href="#"><span class="icon">%</span>Home</a></li>
+				<li><a href="#"><span class="icon">%</span>Profile</a></li>
+				<li><a href="#"><span class="icon">%</span>Messages</a></li>
+				<li><a href="#"><span class="icon">%</span>History</a></li>
+				<li><a href="#"><span class="icon">%</span>Tasks</a></li>
+				<li><a href="#"><span class="icon">%</span>Communities</a></li>
+			</ul>
+			<ul class="nav2">
+				<li><a href="#"><span class="icon">%</span>Settings</a></li>
+				<li><a href="#"><span class="icon">%</span>Support</a></li>
+				<li><a href="#"><span class="icon">%</span>Privacy</a></li>
+			</ul>
+		</article>
+		<main>
+			<section class="projects">
+				<h3>Your Projects</h3>
+				<div class="container">
+					<div class="card">
+						<h4>Super Cool Project</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate dolore sapiente, error fuga magni adipisci!</p>
+					</div>
+					<div class="card">
+						<h4>Less Cool Project</h4>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat natus similique debitis possimus unde iste magni nesciunt, soluta explicabo veniam nihil corrupti dolorum et hic error in, nisi quo expedita.</p>
+					</div>
+					<div class="card">
+						<h4>Impossible App</h4>
+						<p></p>
+					</div>
+					<div class="card">
+						<h4>Easy Peasy App</h4>
+						<p></p>
+					</div>
+					<div class="card">
+						<h4>Ad Blocker</h4>
+						<p></p>
+					</div>
+					<div class="card">
+						<h4>Money Maker</h4>
+						<p></p>
+					</div>
+				</div>
+			</section>
+			<section class="announcements">
+				<h3>Announcements</h3>
+				<div class="container"></div>
+			</section>
+			<section class="trending">
+				<h3>Trending</h3>
+				<div class="container"></div>
+			</section>
+		</main>
+	</div>
 
 	<script src="script.js"></script>
 </body>
+
 </html>
