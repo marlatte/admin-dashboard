@@ -29,30 +29,40 @@ ul {
 header,
 header>div,
 .sidebar,
-.sidebar ul {
+.sidebar ul,
+main .announcements,
+main .announcements .container,
+main .trending,
+main .trending .container {
 	display: flex;
 }
 
 header,
 .sidebar,
-.sidebar ul {
+.sidebar ul,
+main .announcements,
+main .announcements .container,
+main .trending,
+main .trending .container {
 	flex-direction: column;
 }
 
 .wrapper,
 main,
-main section .container {
+main .projects .container {
 	display: grid;
+}
+
+.wrapper {
+	height: 100vh;
+	grid-template: 1fr 5fr / minmax(200px, 1fr) 5fr;
 }
 
 /* ----- /UTILITIES ----- */
 /* ----------------------------------------- */
 /* ----- PAGE STYLING ----- */
-.wrapper {
-	height: 100vh;
-	grid-template: minmax(150px, 1fr) 6fr / minmax(250px, 1fr) 5fr;
-}
 
+/* ----- Header ----- */
 header {
 	grid-column: 2 / -1;
 	padding: 10px 50px;
@@ -127,9 +137,13 @@ header .bottom-line button:first-of-type {
 	margin-left: auto;
 }
 
+/* ----- /Header ----- */
+
+/* ----- Sidebar ----- */
+
 .sidebar {
 	grid-row: 1 / -1;
-	padding: 6% 14% 16%;
+	padding: 6% 10% 16%;
 	z-index: 2;
 
 	gap: 2rem;
@@ -161,11 +175,17 @@ header .bottom-line button:first-of-type {
 	margin-right: 0.6rem;
 }
 
-main {
-	grid-template-columns: 3fr 1fr;
-	padding: 1.5rem;
-	gap: 1.5rem;
+/* ----- /Sidebar ----- */
 
+/* ----- Main ----- */
+
+main {
+	grid-template-columns: 2.5fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	padding: 1.3rem;
+	gap: 2rem 1.5rem;
+
+	overflow-y: scroll;
 	background-color: #e2e8f0;
 }
 
@@ -184,37 +204,55 @@ main .projects {
 	gap: 1.5rem;
 }
 
-.projects .card {
-	padding: 1.5rem 7%;
-
-	background-image: linear-gradient(to right, gold 2.1%, white 2.1%);
+main .card {
+	background-color: #fff;
 	border-radius: 8px;
 	box-shadow: 2px 4px 5px #bfc3ca;
 }
 
+main .card p {
+	color: grey;
+}
+
+.projects .card {
+	padding: 1.5rem 7%;
+	background-image: linear-gradient(to right, gold 2.1%, white 2.1%);
+}
+
 .projects .card .card-header {
-	font-weight: 500;	
+	font-weight: 500;
 }
 
 .projects .card p {
 	margin-top: 5px;
 	font-size: 0.8rem;
-	color: grey;
 }
 
-main .updates {
-	background-color: #fff;
-	border-radius: 8px;
+.announcements .card {
+	flex: 1;
+	padding: 1.4rem;
+
+	gap: 25px;
 }
 
-main .announcements {
-	height: 86%;
-	
+.announcements .card .title {
+	font-size: 0.8rem;
+	font-weight: 600;
 }
 
-main .trending {
-	height: 83%;
-	
+.announcements .card p {
+	margin-top: 3px;
+	font-size: 0.7rem;
 }
+
+.announcements hr {
+	border-top: 1px solid #bfc3ca;
+}
+
+.trending .card {
+	flex: 1;
+}
+
+/* ----- /Main ----- */
 
 /* ----- /PAGE STYLING ----- */
