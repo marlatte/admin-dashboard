@@ -11,7 +11,6 @@ sidebar.addEventListener("mouseenter", () => {
 		navIcon.forEach(icon => {
 			icon.style.marginRight = "10px"
 		})
-		
 	}, 200);
 })
 
@@ -20,4 +19,7 @@ sidebar.addEventListener("mouseleave", ()  => {
 	navText.forEach(item => {
 		item.hidden = true;
 	});
+	navIcon.forEach(icon => {
+		icon.style.marginRight = "0"
+	})
 })
