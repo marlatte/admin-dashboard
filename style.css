@@ -2,6 +2,7 @@
 * {
 	margin: 0;
 	padding: 0;
+ 	box-sizing: border-box;
 }
 
 body {
@@ -29,7 +30,7 @@ ul {
 .wrapper {
 	display: grid;
 	height: 100vh;
-	grid-template: 1fr 5fr / minmax(200px, 1fr) 5fr;
+	grid-template: 1fr 5fr / 70px 1fr;
 }
 
 /* --------------- Header --------------- */
@@ -119,27 +120,43 @@ header .bottom-line button:first-of-type {
 
 .sidebar {
 	grid-row: 1 / -1;
-	padding: 6% 10% 16%;
+	padding: 10px;
 	z-index: 2;
+	width: 100%;
 
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	align-items: center;
+	gap: 1rem;
 
 	background-color: #1b92d4;
 	color: white;
+	transition: 0.5s;
 }
 
-.sidebar ul {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+.sidebar:hover {
+	width: 200px;
 
+	align-items: start;
+	padding-left: 25px;
+
+	box-shadow: 5px 0 10px #0000005a;
+}
+
+.sidebar .brand {
+	font-size: 1.5rem;
+}
+
+.sidebar .nav-item {
 	font-size: 1.1rem;
 }
 
-.sidebar .nav2 {
-	margin-top: 4rem;
+.sidebar > :nth-child(2)  {
+	margin-top: 2rem;
+}
+
+.sidebar > :nth-last-child(3)  {
+	margin-top: 6rem;
 }
 
 .sidebar a {
@@ -147,9 +164,9 @@ header .bottom-line button:first-of-type {
 	font-weight: 600;
 }
 
-.sidebar .icon {
+/* .sidebar .icon {
 	margin-right: 1rem;
-}
+} */
 
 .sidebar h1 .icon {
 	margin-right: 0.6rem;
