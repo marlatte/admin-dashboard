@@ -74,8 +74,8 @@ body {
 
 .wrapper {
 	display: grid;
-	height: 100vh;
-	grid-template: 1fr 5fr / 70px 1fr;
+	min-height: 100vh;
+	grid-template: 145px 1fr / 70px 1fr;
 }
 
 /* --------------- Header --------------- */
@@ -212,20 +212,23 @@ header .bottom-line button:hover {
 }
 
 .sidebar .nav-item {
-	border-radius: 10px;
-
 	font-size: 1.2rem;
 	font-weight: 600;
 	transition: 0.2s;
 }
 
-.sidebar .nav-item:hover {
+.sidebar .nav-item:hover,
+.sidebar .brand:hover {
 	transform: scale(1.05) translateY(-1px);
 	color: var(--em-text-color-light-hover);
 }
 
 .sidebar a {
 	padding: 5px 10px;
+}
+
+.sidebar .brand {
+	font-size: 1.5rem;
 }
 
 /* --------------- /Sidebar --------------- */
@@ -260,19 +263,19 @@ main .projects {
 
 .projects .container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	gap: 1.5rem;
 }
 
 main .card {
 	background-color: #fff;
 	border-radius: 8px;
-	box-shadow: 2px 4px 5px var(--slate-500);
+	box-shadow: 2px 2px 3px var(--slate-500);
 	transition: 0.2s;
 }
 
 main .card:hover {
-	box-shadow: 2px 4px 5px var(--accent-color-2);
+	box-shadow: 4px 4px 5px var(--accent-color-2);
 }
 
 main .card p {
