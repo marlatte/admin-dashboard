@@ -22,57 +22,32 @@ ul {
 	list-style-type: none;
 }
 
-/* ----- /REBOOT ----- */
-/* ----------------------------------------- */
-/* ----- UTILITIES ----- */
+/* --------------- /REBOOT --------------- */
 
-header,
-header>div,
-.sidebar,
-.sidebar ul,
-main .announcements,
-main .announcements .container,
-main .trending,
-main .trending .container {
-	display: flex;
-}
-
-header,
-.sidebar,
-.sidebar ul,
-main .announcements,
-main .announcements .container,
-main .trending,
-main .trending .container {
-	flex-direction: column;
-}
-
-.wrapper,
-main,
-main .projects .container {
-	display: grid;
-}
+/* --------------- PAGE STYLING --------------- */
 
 .wrapper {
+	display: grid;
 	height: 100vh;
 	grid-template: 1fr 5fr / minmax(200px, 1fr) 5fr;
 }
 
-/* ----- /UTILITIES ----- */
-/* ----------------------------------------- */
-/* ----- PAGE STYLING ----- */
+/* --------------- Header --------------- */
 
-/* ----- Header ----- */
 header {
 	grid-column: 2 / -1;
 	padding: 10px 50px;
 	z-index: 1;
+
+	display: flex;
+	flex-direction: column;
 	justify-content: space-around;
 
 	box-shadow: 0 0 10px darkgrey;
 }
 
-header div {
+header > div {
+	display: flex;
 	align-items: center;
 	gap: clamp(10px, 1rem, 1.5rem);
 }
@@ -89,7 +64,7 @@ header input[type="search"] {
 	background-color: #dce1ea;
 }
 
-header .prof-pic {
+.prof-pic {
 	--prof-pic-radius: 60px;
 	height: var(--prof-pic-radius);
 	width: var(--prof-pic-radius);
@@ -102,7 +77,8 @@ header .prof-pic {
 	align-items: center;
 }
 
-header .top-line .prof-pic {
+header .top-line .prof-pic,
+.trending .prof-pic {
 	--prof-pic-radius: 50px;
 }
 
@@ -137,15 +113,17 @@ header .bottom-line button:first-of-type {
 	margin-left: auto;
 }
 
-/* ----- /Header ----- */
+/* --------------- /Header --------------- */
 
-/* ----- Sidebar ----- */
+/* --------------- Sidebar --------------- */
 
 .sidebar {
 	grid-row: 1 / -1;
 	padding: 6% 10% 16%;
 	z-index: 2;
 
+	display: flex;
+	flex-direction: column;
 	gap: 2rem;
 
 	background-color: #1b92d4;
@@ -153,6 +131,8 @@ header .bottom-line button:first-of-type {
 }
 
 .sidebar ul {
+	display: flex;
+	flex-direction: column;
 	gap: 1rem;
 
 	font-size: 1.1rem;
@@ -175,32 +155,39 @@ header .bottom-line button:first-of-type {
 	margin-right: 0.6rem;
 }
 
-/* ----- /Sidebar ----- */
+/* --------------- /Sidebar --------------- */
 
-/* ----- Main ----- */
+/* --------------- Main --------------- */
 
 main {
+	display: grid;
 	grid-template-columns: 2.5fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	padding: 1.3rem;
 	gap: 2rem 1.5rem;
 
-	overflow-y: scroll;
 	background-color: #e2e8f0;
 }
 
+main > section {
+	display: grid;
+	grid-template-rows: 20px 1fr;
+	gap: 8px;
+}
+
 main section .section-header {
-	margin-bottom: 0.5rem;
 	font-weight: 500;
 }
 
 main .projects {
+	display: grid;
 	grid-row: span 2;
+
 }
 
 .projects .container {
+	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	grid-auto-rows: 190px;
 	gap: 1.5rem;
 }
 
@@ -228,10 +215,13 @@ main .card p {
 	font-size: 0.8rem;
 }
 
-.announcements .card {
-	flex: 1;
-	padding: 1.4rem;
+main :not(.projects) .container {
+	flex-direction: column;
+	display: flex;
+}
 
+.announcements .card {
+	padding: 1.4rem;
 	gap: 25px;
 }
 
@@ -250,9 +240,30 @@ main .card p {
 }
 
 .trending .card {
-	flex: 1;
+	padding: 1.4rem;
+	justify-content: space-between;
 }
 
-/* ----- /Main ----- */
+.trending .item {
+	display: grid;
+	grid-template: 1fr 1fr / auto 1fr;
+	gap: 2px 10px;
+}
 
-/* ----- /PAGE STYLING ----- */
+.trending .prof-pic {
+	grid-row: span 2;
+}
+
+.trending .user-handle {
+	align-self: end;
+	font-size: 0.9rem;
+}
+
+.trending .recent-project {
+	align-self: start;
+	font-size: 0.8rem;
+}
+
+/* --------------- /Main --------------- */
+
+/* --------------- /PAGE STYLING --------------- */
