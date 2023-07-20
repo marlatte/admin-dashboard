@@ -78,6 +78,21 @@ body {
 	grid-template: 145px 1fr / 70px 1fr;
 }
 
+.icon {
+	display: inline;
+	--icon-dimensions: 36px;
+	padding: 6px;
+	border-radius: calc(var(--icon-dimensions) / 3);
+	height: var(--icon-dimensions);
+	width: var(--icon-dimensions);
+}
+
+.icon:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	background-image: radial-gradient(transparent 30%, var(--emerald-300));
+}
+
 /* --------------- Header --------------- */
 
 header {
@@ -183,7 +198,7 @@ header .bottom-line button:hover {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1rem;
+	gap: 1.5rem;
 
 	background-color: var(--main-color);
 	color: var(--em-text-color-light);
@@ -224,7 +239,20 @@ header .bottom-line button:hover {
 }
 
 .sidebar a {
-	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+}
+
+.sidebar .icon {
+	--icon-dimensions: 30px;
+	padding: 0;
+	border-radius: unset;
+	
+	fill: currentColor;
+}
+
+.sidebar .icon:hover {
+	background-image: unset;
 }
 
 .sidebar .brand {
@@ -302,38 +330,6 @@ main .card p {
 .projects .card .icons {
 	margin-top: auto;
 	align-self: end;
-
-	display: flex;
-	gap: 20px;
-}
-
-.projects .card .icons span {
-	--icon-dimensions: 22px;
-	padding: 5px;
-	border-radius: calc(var(--icon-dimensions) / 4);
-	height: var(--icon-dimensions);
-	width: var(--icon-dimensions);
-}
-
-.projects .card .icons span:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-	background-color: var(--emerald-200);
-}
-
-.projects .card .icon1 {
-	background-image: url(./images/svg-files/star-plus-outline.svg);
-	
-}
-
-.projects .card .icon2 {
-	background-image: url(./images/svg-files/eye-plus-outline.svg);
-	
-}
-
-.projects .card .icon3 {
-	background-image: url(./images/svg-files/blur.svg);
-	
 }
 
 main :not(.projects) .container {
