@@ -69,7 +69,7 @@ ul {
 }
 
 body {
-	background-color: var(--slate-800);
+	background-color: var(--slate-700);
 }
 
 .wrapper {
@@ -107,7 +107,7 @@ header {
 
 	background-color: var(--slate-050);
 	color: var(--slate-text-color-dark);
-	box-shadow: 0 0 10px darkgrey;
+	box-shadow: 0 0 10px #000000;
 }
 
 header>div {
@@ -135,10 +135,12 @@ header input[type="search"] {
 
 	background-color: var(--emerald-200);
 	border-radius: var(--prof-pic-radius);
+}
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.prof-pic.current-user {
+	background-color: unset;
+	background-image: url(./images/headshot-spain-extra-small.jpg);
+	background-size: cover;
 }
 
 header .top-line .prof-pic,
