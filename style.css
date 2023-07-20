@@ -132,15 +132,26 @@ header input[type="search"] {
 	--prof-pic-radius: 60px;
 	height: var(--prof-pic-radius);
 	width: var(--prof-pic-radius);
-
-	background-color: var(--emerald-200);
 	border-radius: var(--prof-pic-radius);
+	background-size: cover;
 }
 
 .prof-pic.current-user {
-	background-color: unset;
 	background-image: url(./images/headshot-spain-extra-small.jpg);
-	background-size: cover;
+}
+
+.prof-pic.user1 {
+	background-image: url(https://picsum.photos/id/56/200);
+}
+
+.prof-pic.user2 {
+	background-image: url(https://picsum.photos/id/64/200);
+}
+
+.prof-pic.user3 {
+	background-image: url(https://picsum.photos/id/177/200);
+	background-position: -21px -38px;
+    background-size: 93px;
 }
 
 header .top-line .prof-pic,
