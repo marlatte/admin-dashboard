@@ -85,12 +85,13 @@ body {
 	border-radius: calc(var(--icon-dimensions) / 3);
 	height: var(--icon-dimensions);
 	width: var(--icon-dimensions);
+	transition: 0.2s;
 }
 
 .icon:hover {
 	cursor: pointer;
 	transform: scale(1.1);
-	background-image: radial-gradient(transparent 30%, var(--emerald-300));
+	background-image: radial-gradient(var(--emerald-100), transparent 80%);
 }
 
 /* --------------- Header --------------- */
@@ -191,7 +192,7 @@ header .bottom-line button:hover {
 
 .sidebar {
 	grid-row: 1 / -1;
-	padding: 10px;
+	padding: 20px 10px;
 	z-index: 2;
 	width: 100%;
 
@@ -218,12 +219,12 @@ header .bottom-line button:hover {
 	font-size: 1.5rem;
 }
 
-.sidebar> :nth-child(2) {
-	margin-top: 2rem;
+.sidebar> .nav-item:nth-of-type(2) {
+	margin-top: 4rem;
 }
 
-.sidebar> :nth-last-child(3) {
-	margin-top: 6rem;
+.sidebar> .nav-item:nth-last-of-type(3) {
+	margin-top: 4rem;
 }
 
 .sidebar .nav-item {
@@ -243,12 +244,17 @@ header .bottom-line button:hover {
 	align-items: center;
 }
 
+.sidebar .brand a {
+	align-items: end;
+}
+
 .sidebar .icon {
 	--icon-dimensions: 30px;
 	padding: 0;
 	border-radius: unset;
 	
 	fill: currentColor;
+	transition: unset;
 }
 
 .sidebar .icon:hover {
@@ -257,6 +263,16 @@ header .bottom-line button:hover {
 
 .sidebar .brand {
 	font-size: 1.5rem;
+	color: white;
+}
+
+.sidebar .brand:hover,
+.sidebar .brand .icon:hover {
+	transform: none;
+}
+
+.sidebar .brand .icon {
+	--icon-dimensions: 40px;
 }
 
 /* --------------- /Sidebar --------------- */
